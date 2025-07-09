@@ -1,0 +1,13 @@
+{
+  "id": "13a4bfc7-1adf-40be-a9a0-c4d7ec18f7a2",
+  "timestamp": "2025-07-09T22:14:58",
+  "hypothesis": "Can we apply 'neuron firing signal processing' from Neuroscience to solve 'satellite attitude dynamics' in Aerospace?",
+  "topic_1": "neuron firing signal processing",
+  "topic_2": "satellite attitude dynamics",
+  "domain_1": "Neuroscience",
+  "domain_2": "Aerospace",
+  "novelty": 0.772,
+  "feasibility": 0.68,
+  "score": 0.735,
+  "verdict": "Promising"
+}

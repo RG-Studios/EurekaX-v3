@@ -18,6 +18,3 @@ It uses semantic reasoning via **TF-IDF embeddings**, scores novelty and feasibi
 | 💾 Persistent memory | Logs all accepted insights into `eurekax_insights.json` |
 
 ---
-
-## 📁 Project Structure
-

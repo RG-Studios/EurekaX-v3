@@ -32,10 +32,11 @@ EurekaX-v3/
 ├── main.py
 ├── pyproject.toml
 ├── requirements.txt
-└── eurekax_insights.json
+└── .gitignore
 ```
 
 This layout separates source code, tests, and runtime entrypoints to support maintainability and team-scale development.
+`eurekax_insights.json` is generated/updated at runtime by the memory layer.
 
 ## Architecture
 

@@ -1,26 +1,12 @@
-from hypothesis_generator import generate_hypotheses
-from scoring_engine import score_hypotheses
-from memory import store_insight
+from pathlib import Path
+import sys
 
-def run_engine(num_ideas=5):
-    print("🚀 EurekaX v3 – Autonomous Discovery Engine (TF-IDF Edition)\n")
+ROOT = Path(__file__).resolve().parent
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
 
-    ideas = generate_hypotheses(num_ideas)
-
-    for idea in ideas:
-        hypothesis, t1, t2, d1, d2 = idea
-        scores = score_hypotheses(t1, t2)
-        score = scores["final"]
-        verdict = scores["verdict"]
-
-        if verdict != "Rejected":
-            store_insight(hypothesis, t1, t2, d1, d2, scores)
-
-        print(f"\n🧠 {hypothesis}")
-        print(f"📈 Novelty: {scores['novelty']:.3f}")
-        print(f"🔬 Feasibility: {scores['feasibility']:.3f}")
-        print(f"📊 Final Score: {score:.3f}")
-        print(f"🏆 Verdict: {verdict}")
+from eurekax.engine import run_engine
 
 if __name__ == "__main__":
     run_engine(num_ideas=5)

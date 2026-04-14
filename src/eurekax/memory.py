@@ -27,6 +27,12 @@ def store_insight(hypothesis, t1, t2, d1, d2, scores, memory_file: str = DEFAULT
         return
 
     raw = file_path.read_text(encoding="utf-8").strip()
-    data = json.loads(raw) if raw else []
+    loaded = json.loads(raw) if raw else []
+    if isinstance(loaded, list):
+        data = loaded
+    elif isinstance(loaded, dict):
+        data = [loaded]
+    else:
+        data = []
     data.append(insight)
     file_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
